@@ -50,3 +50,22 @@ yarn-error.log*
 *.log
 logs/
 temp/
+
+
+# Raw data crawled from websites
+/data/raw/web/crawled/
+
+# URL
+/data/raw/web/ou.edu.vn_home.md 
+
+# Generated RAG data
+/data/processed/chunks.json
+/data/processed/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment variables and secrets
+.env
