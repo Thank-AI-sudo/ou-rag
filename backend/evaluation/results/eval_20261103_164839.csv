@@ -1,0 +1,1 @@
+﻿id,category,question,expected_behavior,source_hint,http_status,latency_seconds,answer,retrieved_count,reranking_used,citation_numbers,invalid_citations,unused_source_numbers,citation_structure_ok,source_count,missing_source_url_count,error,manual_factual_accuracy,manual_groundedness,manual_answer_completeness,manual_notes
