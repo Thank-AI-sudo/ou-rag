@@ -1,0 +1,690 @@
+[
+  {
+    "id": "D01",
+    "category": "direct",
+    "question": "Cố vấn học tập có nhiệm vụ gì trong việc hướng dẫn sinh viên đăng ký và hủy đăng ký môn học?",
+    "expected_behavior": "Trình bày đúng nhiệm vụ hướng dẫn thủ tục đăng ký, hủy đăng ký và kế hoạch học tập nếu tài liệu hỗ trợ; trích dẫn điều khoản liên quan.",
+    "source_hint": "Nhiệm vụ của Cố vấn học tập",
+    "http_status": 200,
+    "latency_seconds": 12.976,
+    "answer": "Cố vấn học tập có nhiệm vụ hướng dẫn quy trình, thủ tục cho sinh viên đăng ký môn học, hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân cho từng học kỳ [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.83839464
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "D02",
+    "category": "direct",
+    "question": "Cố vấn học tập cần tổ chức họp lớp sinh viên với tần suất như thế nào?",
+    "expected_behavior": "Nêu tần suất theo tài liệu và trích dẫn; không tự thêm yêu cầu.",
+    "source_hint": "Chế độ làm việc với lớp sinh viên",
+    "http_status": 200,
+    "latency_seconds": 12.327,
+    "answer": "Cố vấn học tập tổ chức họp lớp sinh viên với tần suất ít nhất 01 lần/học kỳ [1]. Ngoài ra, Cố vấn học tập còn phối hợp với Chủ nhiệm lớp tổ chức mỗi học kỳ ít nhất 01 buổi họp lớp sinh viên bằng hình thức trực tuyến [3].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "ae8275d09c3d41df",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7851181
+      },
+      {
+        "number": 3,
+        "chunk_id": "a306685c0d2aa6b1",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7276655
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      3
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "D03",
+    "category": "direct",
+    "question": "Cố vấn học tập có nhiệm vụ tư vấn sinh viên về phương pháp tự học và nghiên cứu khoa học không?",
+    "expected_behavior": "Xác nhận hoặc phủ nhận theo nội dung quy chế, có trích dẫn.",
+    "source_hint": "Nhiệm vụ của Cố vấn học tập",
+    "http_status": 200,
+    "latency_seconds": 29.309,
+    "answer": "Có, Cố vấn học tập có nhiệm vụ tư vấn cho sinh viên về phương pháp học đại học, phương pháp tự học và kỹ năng nghiên cứu khoa học, kỹ năng thu thập, xử lý thông tin, tài liệu học tập [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.8603277
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "D04",
+    "category": "direct",
+    "question": "Sinh viên nhận học bổng Vượt khó học tập có cần hoàn tất nghĩa vụ học phí không?",
+    "expected_behavior": "Trả lời dựa trên quy định học bổng và viện dẫn điều kiện tương ứng.",
+    "source_hint": "Quy định học bổng Vượt khó học tập đại học chính quy",
+    "http_status": 200,
+    "latency_seconds": 22.781,
+    "answer": "Có, sinh viên nhận học bổng Vượt khó học tập phải hoàn tất nghĩa vụ học phí các học kỳ trước và học kỳ được xét cấp học bổng theo quy định của Phòng Quản lý đào tạo và Nhà trường [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "6df6b7c10156b258",
+        "title": "﻿# Quy định học bổng Vượt khó học tập đại học chính quy",
+        "url": "https://ou.edu.vn/hocbong/hbvk/",
+        "source_file": "hoc-bong-vuot-kho-quy-dinh-164.md",
+        "rerank_score": 0.48633695
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "D05",
+    "category": "direct",
+    "question": "Sinh viên được yêu cầu đăng ký môn học ở học kỳ liền kề tiếp theo khi xét học bổng Vượt khó học tập hay không?",
+    "expected_behavior": "Trả lời theo quy định đã lưu, có trích dẫn.",
+    "source_hint": "Quy định học bổng Vượt khó học tập đại học chính quy",
+    "http_status": 200,
+    "latency_seconds": 32.123,
+    "answer": "Có, sinh viên phải đăng ký môn học trong học kỳ liền kề tiếp theo khi được xét cấp học bổng Vượt khó học tập [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "6df6b7c10156b258",
+        "title": "﻿# Quy định học bổng Vượt khó học tập đại học chính quy",
+        "url": "https://ou.edu.vn/hocbong/hbvk/",
+        "source_file": "hoc-bong-vuot-kho-quy-dinh-164.md",
+        "rerank_score": 0.64370924
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "S01",
+    "category": "synthesis",
+    "question": "Cố vấn học tập hỗ trợ sinh viên lập kế hoạch học tập và lựa chọn học phần như thế nào?",
+    "expected_behavior": "Tổng hợp nhiệm vụ liên quan từ các chunks, không bổ sung thủ tục ngoài tài liệu.",
+    "source_hint": "Nhiệm vụ của Cố vấn học tập",
+    "http_status": 200,
+    "latency_seconds": 13.007,
+    "answer": "Cố vấn học tập hỗ trợ sinh viên lập kế hoạch học tập và lựa chọn học phần thông qua các nhiệm vụ sau:\n\n* Thảo luận và hướng dẫn sinh viên thực hiện chương trình đào tạo toàn khóa, cách lựa chọn học phần và tuân thủ các điều kiện tiên quyết của từng môn học [1].\n* Hướng dẫn quy trình, thủ tục để sinh viên đăng ký môn học, hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân cho từng học kỳ [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7686136
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "S02",
+    "category": "synthesis",
+    "question": "Khi sinh viên có kết quả học tập giảm sút, cố vấn học tập cần làm gì và có thể sử dụng kênh nào để hỗ trợ?",
+    "expected_behavior": "Kết hợp các đoạn nói về nhắc nhở, tư vấn và cổng thông tin nếu có bằng chứng; mỗi ý quan trọng có nguồn.",
+    "source_hint": "Nhiệm vụ của Cố vấn học tập; cổng thông tin CVHT",
+    "http_status": 200,
+    "latency_seconds": 14.068,
+    "answer": "Khi sinh viên có kết quả học tập giảm sút, cố vấn học tập cần thực hiện việc nhắc nhở sinh viên [1], [2]. \n\nĐể hỗ trợ sinh viên, cố vấn học tập có thể sử dụng các kênh sau:\n- Cổng thông tin Cố vấn học tập – Chủ nhiệm lớp (thông qua diễn đàn thảo luận hoặc phần tin nhắn nội bộ) [1].\n- Các kênh liên hệ khác như Khoa, Phòng Công tác sinh viên và Truyền thông, và email [3].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "a306685c0d2aa6b1",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.6870067
+      },
+      {
+        "number": 2,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.6485377
+      },
+      {
+        "number": 3,
+        "chunk_id": "ae8275d09c3d41df",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.40080184
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      2,
+      3
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "S03",
+    "category": "synthesis",
+    "question": "Cố vấn học tập cần phổ biến những thông tin gì cho sinh viên vào đầu học kỳ và trong các buổi họp lớp?",
+    "expected_behavior": "Tổng hợp các nhiệm vụ phổ biến quy chế và chế độ họp lớp, trích dẫn phù hợp.",
+    "source_hint": "Nhiệm vụ CVHT; chế độ làm việc với lớp",
+    "http_status": 200,
+    "latency_seconds": 11.856,
+    "answer": "Dựa trên tài liệu cung cấp, Cố vấn học tập (CVHT) cần phổ biến và thực hiện các nội dung sau:\n\n* **Vào đầu mỗi học kỳ:**\n  * Tổ chức họp lớp sinh viên để triển khai các quy định, quy chế về học chế tín chỉ, các quy định của Nhà trường liên quan đến quyền và nghĩa vụ của sinh viên trong học tập [1].\n\n* **Trong các buổi họp lớp sinh viên (ít nhất 01 lần/học kỳ):**\n  * Thông báo về các hoạt động của Trường về vấn đề học tập liên quan đến sinh viên [2].\n  * Tư vấn kết quả học tập trong học kỳ [2].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7184453
+      },
+      {
+        "number": 2,
+        "chunk_id": "ae8275d09c3d41df",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.68329746
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      2
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "S04",
+    "category": "synthesis",
+    "question": "Hãy phân biệt nhiệm vụ và quyền hạn của cố vấn học tập theo các tài liệu OU hiện có.",
+    "expected_behavior": "Phân biệt rõ hai nhóm nội dung dựa trên đúng các phần tài liệu; không đánh đồng nhiệm vụ và quyền hạn.",
+    "source_hint": "Nhiệm vụ của CVHT; Quyền hạn của CVHT",
+    "http_status": 200,
+    "latency_seconds": 14.85,
+    "answer": "Dựa trên các tài liệu của Trường Đại học Mở TP.HCM (OU), nhiệm vụ và quyền hạn của Cố vấn học tập (CVHT) được quy định cụ thể như sau:\n\n**1. Quyền hạn của Cố vấn học tập:**\n* Được cung cấp tài khoản truy cập vào hệ thống cổng thông tin Cố vấn học tập – Chủ nhiệm lớp để tham khảo và tư vấn cho sinh viên [1].\n* Được đề nghị các đơn vị liên quan cung cấp tài liệu, phòng học, thông tin và cơ sở vật chất cần thiết để thực hiện nhiệm vụ [1].\n* Được yêu cầu Ban cán sự lớp báo cáo tình hình học tập (định kỳ hoặc đột xuất) nhằm đưa ra biện pháp hỗ trợ kịp thời [1].\n* Chủ động trong công tác quản lý, tư vấn, hướng dẫn để giúp sinh viên hoàn thành tốt nhiệm vụ học tập [1].\n\n**2. Nhiệm vụ của Cố vấn học tập:**\n* Tổ chức họp lớp vào đầu mỗi học kỳ; triển khai quy chế, quy định về học chế tín chỉ và quyền, nghĩa vụ của sinh viên [2].\n* Tư vấn phương pháp học đại học, tự học, kỹ năng nghiên cứu khoa học, thu thập và xử lý thông tin, tài liệu [2].\n* Hướng dẫn sinh viên thực hiện chương trình đào tạo toàn khóa, cách chọn học phần và tuân thủ điều kiện tiên quyết [2].\n* Hướng dẫn quy trình, thủ tục đăng ký/hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân từng học kỳ [2].\n* Hỗ trợ sinh viên lựa chọn nơi thực tập, đề tài khóa luận, tiểu luận hoặc nghiên cứu khoa học phù hợp [2].\n* Nhắc nhở sinh viên khi kết quả học tập có dấu hiệu giảm sút [2].\n* Thực hiện chế độ báo cáo theo yêu cầu của Trường và lãnh đạo khoa [2].\n* Sử dụng hiệu quả cổng thông tin Cố vấn học tập – Chủ nhiệm lớp cho các lớp được phân công phụ trách [2].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "59f4989a06841e13",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.80267745
+      },
+      {
+        "number": 2,
+        "chunk_id": "394867305a7c9aa8",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7607226
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      2
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "S05",
+    "category": "synthesis",
+    "question": "Theo tài liệu học bổng Vượt khó, hãy tổng hợp đối tượng áp dụng và các điều kiện cần đáp ứng.",
+    "expected_behavior": "Tổng hợp có điều kiện và giới hạn đối tượng; tránh suy diễn rằng mọi học bổng OU đều theo cùng quy định.",
+    "source_hint": "Quy định học bổng Vượt khó học tập đại học chính quy",
+    "http_status": 200,
+    "latency_seconds": 17.9,
+    "answer": "Dựa trên tài liệu cung cấp, đối tượng áp dụng và các điều kiện cần đáp ứng của học bổng Vượt khó học tập đại học chính quy bao gồm:\n\n**1. Đối tượng áp dụng:**\n* Sinh viên đang theo học hệ chính quy bậc đại học trong thời gian đào tạo chính khóa 4 năm tại Trường Đại học Mở Thành phố Hồ Chí Minh [2].\n* Sinh viên có hoàn cảnh gia đình khó khăn về kinh tế, có ý chí vươn lên và tinh thần cầu tiến trong học tập, rèn luyện [2].\n\n**2. Các điều kiện cần đáp ứng và trường hợp không áp dụng:**\n* **Ưu tiên xét đối với sinh viên:** Không được miễn giảm học phí, không thuộc diện hưởng học bổng chính sách hoặc trợ cấp xã hội, chính sách ưu đãi và không được xét học bổng Khuyến khích học tập trong cùng học kỳ [2].\n* **Không áp dụng đối với:**\n  * Sinh viên học liên thông từ cao đẳng lên đại học, bằng đại học thứ hai, đào tạo từ xa hoặc vừa làm vừa học [2].\n  * Sinh viên đã nhận học bổng Tiếp sức đến trường hoặc học bổng hỗ trợ khó khăn đột xuất khác trong cùng học kỳ được xét [2].",
+    "sources": [
+      {
+        "number": 2,
+        "chunk_id": "d39331404d6d4cc3",
+        "title": "﻿# Quy định học bổng Vượt khó học tập đại học chính quy",
+        "url": "https://ou.edu.vn/hocbong/hbvk/",
+        "source_file": "hoc-bong-vuot-kho-quy-dinh-164.md",
+        "rerank_score": 0.30058935
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      2
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "C01",
+    "category": "cross_topic",
+    "question": "Quyền hạn của cố vấn học tập trong việc yêu cầu thông tin từ các đơn vị liên quan là gì?",
+    "expected_behavior": "Tìm đúng phần quyền hạn thay vì nhiệm vụ và trích dẫn nguồn.",
+    "source_hint": "Quyền hạn của Cố vấn học tập",
+    "http_status": 200,
+    "latency_seconds": 13.323,
+    "answer": "Quyền hạn của cố vấn học tập trong việc yêu cầu thông tin từ các đơn vị liên quan là: được đề nghị các đơn vị có liên quan cung cấp các tài liệu, phòng học, thông tin và cơ sở vật chất cần thiết để thực hiện nhiệm vụ [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "59f4989a06841e13",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.78273875
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "C02",
+    "category": "cross_topic",
+    "question": "Theo tài liệu hiện có, cố vấn học tập phải thực hiện những loại báo cáo nào vào cuối học kỳ hoặc cuối năm học?",
+    "expected_behavior": "Nêu các báo cáo theo mốc thời gian có trong tài liệu, có citation.",
+    "source_hint": "Chế độ báo cáo",
+    "http_status": 200,
+    "latency_seconds": 14.202,
+    "answer": "Theo tài liệu hiện có, các loại báo cáo của Cố vấn học tập (CVHT) bao gồm:\n\n* **Cuối mỗi học kỳ:** CVHT lập báo cáo về công tác Cố vấn học tập các lớp sinh viên phụ trách [1].\n* **Cuối mỗi năm học:** CVHT lập báo cáo tình hình học tập của lớp sinh viên, những thắc mắc và kiến nghị của sinh viên (nếu có) và các vấn đề khác có liên quan đến quá trình học tập [1]. Ngoài ra, báo cáo thực hiện nhiệm vụ của từng CVHT còn được dùng để làm hồ sơ thanh toán phụ cấp sau khi kết thúc năm học [3].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "aff1f0fa92f48639",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.81218916
+      },
+      {
+        "number": 3,
+        "chunk_id": "3ac25a47b4584210",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.63158363
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      3
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "C03",
+    "category": "cross_topic",
+    "question": "Tài liệu OU đề cập trách nhiệm phổ biến quy định về sinh viên ngoại trú và hướng dẫn đăng ký tạm trú như thế nào?",
+    "expected_behavior": "Truy xuất đúng quy chế ngoại trú; không tự bịa thủ tục hành chính cụ thể.",
+    "source_hint": "Công tác quản lý sinh viên ngoại trú",
+    "http_status": 200,
+    "latency_seconds": 14.491,
+    "answer": "Theo tài liệu, công tác quản lý sinh viên ngoại trú bao gồm các nội dung sau:\n- Phổ biến các quy định của Bộ Giáo dục và Đào tạo, nhà trường về công tác ngoại trú của học sinh, sinh viên; hướng dẫn và tư vấn thủ tục đăng ký tạm trú ngay từ khi nhập học [2].\n- Lập kế hoạch hàng năm để thực hiện công tác quản lý học sinh, sinh viên ngoại trú [2].\n- Lập sổ học sinh, sinh viên ngoại trú, cập nhật đầy đủ, kịp thời việc thay đổi nơi cư trú của học sinh, sinh viên ngoại trú [2].",
+    "sources": [
+      {
+        "number": 2,
+        "chunk_id": "87be21408651154b",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7488646
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      2
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "C04",
+    "category": "cross_topic",
+    "question": "Theo quy định học bổng Vượt khó, những hình thức đào tạo nào không thuộc đối tượng áp dụng?",
+    "expected_behavior": "Liệt kê loại hình đào tạo chỉ khi đoạn nguồn hỗ trợ; giữ phạm vi riêng của học bổng Vượt khó.",
+    "source_hint": "Quy định học bổng Vượt khó học tập đại học chính quy",
+    "http_status": 200,
+    "latency_seconds": 11.925,
+    "answer": "Theo quy định học bổng Vượt khó, những hình thức đào tạo không thuộc đối tượng áp dụng bao gồm:\n- Sinh viên học liên thông từ cao đẳng lên đại học [1].\n- Bằng đại học thứ hai [1].\n- Đào tạo từ xa [1].\n- Vừa làm vừa học [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "d39331404d6d4cc3",
+        "title": "﻿# Quy định học bổng Vượt khó học tập đại học chính quy",
+        "url": "https://ou.edu.vn/hocbong/hbvk/",
+        "source_file": "hoc-bong-vuot-kho-quy-dinh-164.md",
+        "rerank_score": 0.37984267
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "C05",
+    "category": "cross_topic",
+    "question": "Cố vấn học tập có thể sử dụng cổng thông tin CVHT – Chủ nhiệm lớp để hỗ trợ sinh viên ra sao?",
+    "expected_behavior": "Lấy đúng đoạn về sử dụng cổng thông tin, tư vấn/trao đổi với sinh viên; trích dẫn.",
+    "source_hint": "Sử dụng cổng thông tin Cố vấn học tập",
+    "http_status": 200,
+    "latency_seconds": 13.023,
+    "answer": "Dựa trên tài liệu, Cố vấn học tập có thể sử dụng cổng thông tin Cố vấn học tập – Chủ nhiệm lớp để hỗ trợ sinh viên thông qua các hoạt động sau:\n\n* Được cung cấp tài khoản truy cập để tham khảo và tư vấn cho sinh viên trong quá trình học tập tại Trường [1].\n* Có lịch tư vấn trực tuyến với sinh viên, đồng thời kịp thời phản ánh các vấn đề của sinh viên về Trường qua cổng thông tin này [2].\n* Thường xuyên đăng tải các thông báo, quy định, quy chế mới để thông tin cho sinh viên trong mỗi học kỳ [3].\n* Theo dõi, trả lời các thắc mắc và tư vấn cho sinh viên liên quan đến việc học tập thông qua diễn đàn thảo luận hoặc phần tin nhắn nội bộ trong vòng 48 giờ kể từ khi sinh viên gửi thắc mắc (trừ cuối tuần và ngày nghỉ lễ) [3].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "59f4989a06841e13",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7534683
+      },
+      {
+        "number": 2,
+        "chunk_id": "ae8275d09c3d41df",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.7486126
+      },
+      {
+        "number": 3,
+        "chunk_id": "3082cba9562f6169",
+        "title": "Quy chế – Quy định CTSV",
+        "url": "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+        "source_file": "quy-che-quy-dinh-ctsv-2f08105a.md",
+        "rerank_score": 0.74672294
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1,
+      2,
+      3
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "U01",
+    "category": "unsupported",
+    "question": "Theo quy định của OU, mọi sinh viên đều được nhận học bổng 100 triệu đồng mỗi học kỳ mà không cần điều kiện đúng không?",
+    "expected_behavior": "Không xác nhận khẳng định thiếu bằng chứng; nếu nêu điều kiện của học bổng Vượt khó phải giới hạn đúng phạm vi tài liệu.",
+    "source_hint": "Không có nguồn xác nhận mức 100 triệu trong dữ liệu đã kiểm thử",
+    "http_status": 200,
+    "latency_seconds": 13.421,
+    "answer": "Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này (cụ thể là về mức học bổng 100 triệu đồng). \n\nTuy nhiên, theo quy định về học bổng Vượt khó học tập đại học chính quy, sinh viên muốn được xét cấp học bổng phải đáp ứng các điều kiện:\n- Hoàn tất nghĩa vụ học phí các học kỳ trước và học kỳ được xét cấp học bổng theo quy định của Phòng Quản lý đào tạo và Nhà trường [1].\n- Đăng ký môn học trong học kỳ liền kề tiếp theo [1].",
+    "sources": [
+      {
+        "number": 1,
+        "chunk_id": "6df6b7c10156b258",
+        "title": "﻿# Quy định học bổng Vượt khó học tập đại học chính quy",
+        "url": "https://ou.edu.vn/hocbong/hbvk/",
+        "source_file": "hoc-bong-vuot-kho-quy-dinh-164.md",
+        "rerank_score": 0.3327831
+      }
+    ],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [
+      1
+    ],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "U02",
+    "category": "unsupported",
+    "question": "Theo quy định OU, sinh viên có thể bỏ qua toàn bộ môn tiên quyết mà không cần xin phép phải không?",
+    "expected_behavior": "Không xác nhận quyền bỏ qua nếu không có quy định hỗ trợ; có thể nêu yêu cầu tuân thủ điều kiện tiên quyết nếu có nguồn.",
+    "source_hint": "Nhiệm vụ CVHT; điều kiện tiên quyết",
+    "http_status": 200,
+    "latency_seconds": 12.288,
+    "answer": "Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.",
+    "sources": [],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "U03",
+    "category": "unsupported",
+    "question": "OU có bảo đảm mỗi sinh viên chắc chắn tốt nghiệp trong đúng 2 năm không?",
+    "expected_behavior": "Không khẳng định bảo đảm nếu thiếu chứng cứ; nêu không đủ thông tin và không bịa thời hạn.",
+    "source_hint": "Kiểm tra khả năng từ chối khi thiếu bằng chứng",
+    "http_status": 200,
+    "latency_seconds": 29.943,
+    "answer": "Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.",
+    "sources": [],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "U04",
+    "category": "unsupported",
+    "question": "Theo tài liệu hiện có, học bổng Vượt khó được tự động chuyển vào tài khoản ngân hàng của tất cả sinh viên vào ngày 1 mỗi tháng đúng không?",
+    "expected_behavior": "Không chấp nhận tiền đề thiếu chứng cứ về tự động cấp, đối tượng và ngày chuyển khoản.",
+    "source_hint": "Quy định học bổng Vượt khó",
+    "http_status": 200,
+    "latency_seconds": 13.223,
+    "answer": "Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.",
+    "sources": [],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  },
+  {
+    "id": "U05",
+    "category": "unsupported",
+    "question": "Nếu sinh viên quên đăng ký môn học, OU có tự động đăng ký toàn bộ môn học và miễn tất cả học phí không?",
+    "expected_behavior": "Không tự bịa cơ chế đăng ký tự động hoặc miễn học phí; nói rõ phần không có bằng chứng.",
+    "source_hint": "Kiểm tra khả năng từ chối khi thiếu bằng chứng",
+    "http_status": 200,
+    "latency_seconds": 12.01,
+    "answer": "Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này (liên quan đến việc nhà trường tự động đăng ký môn học và miễn tất cả học phí khi sinh viên quên đăng ký).",
+    "sources": [],
+    "reranking_used": true,
+    "retrieved_count": 10,
+    "citation_numbers": [],
+    "invalid_citations": [],
+    "unused_source_numbers": [],
+    "citation_structure_ok": true,
+    "error": "",
+    "manual_factual_accuracy": "",
+    "manual_groundedness": "",
+    "manual_answer_completeness": "",
+    "manual_notes": ""
+  }
+]

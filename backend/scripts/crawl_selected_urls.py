@@ -16,12 +16,18 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 INPUT_FILE = ROOT_DIR / "data" / "processed" / "urls_by_category.json"
 OUTPUT_DIR = ROOT_DIR / "data" / "raw" / "web" / "crawled"
 
-# Lần chạy đầu chỉ crawl tối đa 10 trang
+
 MAX_PAGES = 10
+
 # Những trang cần crawl trước
 TARGET_URLS = [
     "http://ou.edu.vn/cong-tac-sinh-vien/quyche-quydinh/",
+    "https://ou.edu.vn/hocbong/",
+    "https://ou.edu.vn/tin_tuc/hbvk253/",
+    "http://ou.edu.vn/hocbong/hocbong-info/",
+    "http://ou.edu.vn/hocbong/hbvk/",
 ]
+
 
 # Các nhóm ưu tiên cho chatbot hỗ trợ sinh viên
 PRIORITY_CATEGORIES = {
@@ -69,38 +75,56 @@ def normalize_text(text: str) -> str:
     return text.replace("đ", "d")
 
 
+
 def select_urls(data: dict) -> list[dict]:
-    """Chọn URL từ các nhóm ưu tiên và một số trang quy chế bị phân loại nhầm."""
+    """Chọn URL ưu tiên và luôn bổ sung các URL được chỉ định."""
 
     selected = []
     seen_urls = set()
 
+    def add_url(title: str, url: str, category: str) -> None:
+        url = url.strip()
+
+        if not url.startswith(("http://", "https://")):
+            return
+
+        parsed = urlparse(url)
+
+        # Chỉ lấy tên miền OU
+        if not (
+            parsed.hostname == "ou.edu.vn"
+            or (
+                parsed.hostname
+                and parsed.hostname.endswith(".ou.edu.vn")
+            )
+        ):
+            return
+
+        # Bỏ ảnh và PDF
+        if Path(parsed.path).suffix.lower() in {
+            ".png", ".jpg", ".jpeg", ".gif",
+            ".webp", ".svg", ".ico", ".pdf"
+        }:
+            return
+
+        # Chuẩn hóa để tránh trùng URL có hoặc không có dấu /
+        normalized_url = url.rstrip("/")
+
+        if normalized_url in seen_urls:
+            return
+
+        seen_urls.add(normalized_url)
+        selected.append({
+            "title": title or "Trang OU",
+            "url": url,
+            "category": category,
+        })
+
+    # 1. Chọn URL từ JSON theo bộ lọc cũ
     for category, items in data.items():
         for item in items:
             title = item.get("title", "").strip()
             url = item.get("url", "").strip()
-
-            if not url.startswith(("http://", "https://")):
-                continue
-
-            parsed = urlparse(url)
-
-            # Chỉ lấy trang thuộc OU và các tên miền con của OU
-            if not (
-                parsed.hostname == "ou.edu.vn"
-                or (
-                    parsed.hostname
-                    and parsed.hostname.endswith(".ou.edu.vn")
-                )
-            ):
-                continue
-
-            # Không crawl URL trỏ thẳng tới ảnh
-            if Path(parsed.path).suffix.lower() in {
-                ".png", ".jpg", ".jpeg", ".gif",
-                ".webp", ".svg", ".ico", ".pdf"
-            }:
-                continue
 
             text = normalize_text(f"{title} {url}")
 
@@ -110,37 +134,49 @@ def select_urls(data: dict) -> list[dict]:
                 for keyword in PRIORITY_KEYWORDS
             )
 
-            # Lấy nhóm ưu tiên hoặc trang hữu ích bị xếp nhầm vào "khac"
             if not (is_priority_category or has_priority_keyword):
                 continue
 
-            # Bỏ trang chủ và các liên kết chỉ dùng để chuyển vị trí trên trang
-            if not parsed.path.strip("/") and parsed.fragment:
-                continue
+            add_url(title, url, category)
 
-            if url in seen_urls:
-                continue
+    # 2. Bổ sung các URL được chỉ định, kể cả khi không có trong JSON
+    for url in TARGET_URLS:
+        normalized_url = url.rstrip("/")
 
-            seen_urls.add(url)
-            selected.append({
-                "title": title or "Trang OU",
-                "url": url,
-                "category": category,
-            })
+        if normalized_url in seen_urls:
+            continue
 
-    # Ưu tiên các URL quan trọng lên đầu danh sách
-    target_urls = {
-        url.rstrip("/")
-        for url in TARGET_URLS
+        if "hbvk" in url.lower():
+            title = "Thông báo học bổng Vượt khó học tập"
+            category = "hoc_phi_hoc_bong"
+        elif "hocbong" in url.lower():
+            title = "Thông tin học bổng OU"
+            category = "hoc_phi_hoc_bong"
+        else:
+            title = "Quy chế, quy định công tác sinh viên"
+            category = "cong_tac_sinh_vien"
+
+        add_url(title, url, category)
+
+    # 3. Đưa URL mục tiêu lên đầu danh sách theo đúng thứ tự
+    target_order = {
+        url.rstrip("/"): index
+        for index, url in enumerate(TARGET_URLS)
     }
 
     selected.sort(
         key=lambda item: (
-            0 if item["url"].rstrip("/") in target_urls else 1
+            0 if item["url"].rstrip("/") in target_order else 1,
+            target_order.get(
+                item["url"].rstrip("/"),
+                len(target_order),
+            ),
         )
     )
 
     return selected[:MAX_PAGES]
+
+
 
 def safe_filename(title: str, url: str) -> str:
     """Tạo tên file an toàn, tránh trùng tên."""

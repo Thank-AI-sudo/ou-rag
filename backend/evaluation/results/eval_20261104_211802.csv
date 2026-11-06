@@ -1,0 +1,80 @@
+﻿id,category,question,expected_behavior,source_hint,http_status,latency_seconds,answer,retrieved_count,reranking_used,citation_numbers,invalid_citations,unused_source_numbers,citation_structure_ok,source_count,missing_source_url_count,error,manual_factual_accuracy,manual_groundedness,manual_answer_completeness,manual_notes
+D01,direct,Cố vấn học tập có nhiệm vụ gì trong việc hướng dẫn sinh viên đăng ký và hủy đăng ký môn học?,"Trình bày đúng nhiệm vụ hướng dẫn thủ tục đăng ký, hủy đăng ký và kế hoạch học tập nếu tài liệu hỗ trợ; trích dẫn điều khoản liên quan.",Nhiệm vụ của Cố vấn học tập,200,12.976,"Cố vấn học tập có nhiệm vụ hướng dẫn quy trình, thủ tục cho sinh viên đăng ký môn học, hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân cho từng học kỳ [1].",10,True,[1],[],[],True,1,0,,,,,
+D02,direct,Cố vấn học tập cần tổ chức họp lớp sinh viên với tần suất như thế nào?,Nêu tần suất theo tài liệu và trích dẫn; không tự thêm yêu cầu.,Chế độ làm việc với lớp sinh viên,200,12.327,"Cố vấn học tập tổ chức họp lớp sinh viên với tần suất ít nhất 01 lần/học kỳ [1]. Ngoài ra, Cố vấn học tập còn phối hợp với Chủ nhiệm lớp tổ chức mỗi học kỳ ít nhất 01 buổi họp lớp sinh viên bằng hình thức trực tuyến [3].",10,True,"[1, 3]",[],[],True,2,0,,,,,
+D03,direct,Cố vấn học tập có nhiệm vụ tư vấn sinh viên về phương pháp tự học và nghiên cứu khoa học không?,"Xác nhận hoặc phủ nhận theo nội dung quy chế, có trích dẫn.",Nhiệm vụ của Cố vấn học tập,200,29.309,"Có, Cố vấn học tập có nhiệm vụ tư vấn cho sinh viên về phương pháp học đại học, phương pháp tự học và kỹ năng nghiên cứu khoa học, kỹ năng thu thập, xử lý thông tin, tài liệu học tập [1].",10,True,[1],[],[],True,1,0,,,,,
+D04,direct,Sinh viên nhận học bổng Vượt khó học tập có cần hoàn tất nghĩa vụ học phí không?,Trả lời dựa trên quy định học bổng và viện dẫn điều kiện tương ứng.,Quy định học bổng Vượt khó học tập đại học chính quy,200,22.781,"Có, sinh viên nhận học bổng Vượt khó học tập phải hoàn tất nghĩa vụ học phí các học kỳ trước và học kỳ được xét cấp học bổng theo quy định của Phòng Quản lý đào tạo và Nhà trường [1].",10,True,[1],[],[],True,1,0,,,,,
+D05,direct,Sinh viên được yêu cầu đăng ký môn học ở học kỳ liền kề tiếp theo khi xét học bổng Vượt khó học tập hay không?,"Trả lời theo quy định đã lưu, có trích dẫn.",Quy định học bổng Vượt khó học tập đại học chính quy,200,32.123,"Có, sinh viên phải đăng ký môn học trong học kỳ liền kề tiếp theo khi được xét cấp học bổng Vượt khó học tập [1].",10,True,[1],[],[],True,1,0,,,,,
+S01,synthesis,Cố vấn học tập hỗ trợ sinh viên lập kế hoạch học tập và lựa chọn học phần như thế nào?,"Tổng hợp nhiệm vụ liên quan từ các chunks, không bổ sung thủ tục ngoài tài liệu.",Nhiệm vụ của Cố vấn học tập,200,13.007,"Cố vấn học tập hỗ trợ sinh viên lập kế hoạch học tập và lựa chọn học phần thông qua các nhiệm vụ sau:
+
+* Thảo luận và hướng dẫn sinh viên thực hiện chương trình đào tạo toàn khóa, cách lựa chọn học phần và tuân thủ các điều kiện tiên quyết của từng môn học [1].
+* Hướng dẫn quy trình, thủ tục để sinh viên đăng ký môn học, hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân cho từng học kỳ [1].",10,True,[1],[],[],True,1,0,,,,,
+S02,synthesis,"Khi sinh viên có kết quả học tập giảm sút, cố vấn học tập cần làm gì và có thể sử dụng kênh nào để hỗ trợ?","Kết hợp các đoạn nói về nhắc nhở, tư vấn và cổng thông tin nếu có bằng chứng; mỗi ý quan trọng có nguồn.",Nhiệm vụ của Cố vấn học tập; cổng thông tin CVHT,200,14.068,"Khi sinh viên có kết quả học tập giảm sút, cố vấn học tập cần thực hiện việc nhắc nhở sinh viên [1], [2]. 
+
+Để hỗ trợ sinh viên, cố vấn học tập có thể sử dụng các kênh sau:
+- Cổng thông tin Cố vấn học tập – Chủ nhiệm lớp (thông qua diễn đàn thảo luận hoặc phần tin nhắn nội bộ) [1].
+- Các kênh liên hệ khác như Khoa, Phòng Công tác sinh viên và Truyền thông, và email [3].",10,True,"[1, 2, 3]",[],[],True,3,0,,,,,
+S03,synthesis,Cố vấn học tập cần phổ biến những thông tin gì cho sinh viên vào đầu học kỳ và trong các buổi họp lớp?,"Tổng hợp các nhiệm vụ phổ biến quy chế và chế độ họp lớp, trích dẫn phù hợp.",Nhiệm vụ CVHT; chế độ làm việc với lớp,200,11.856,"Dựa trên tài liệu cung cấp, Cố vấn học tập (CVHT) cần phổ biến và thực hiện các nội dung sau:
+
+* **Vào đầu mỗi học kỳ:**
+  * Tổ chức họp lớp sinh viên để triển khai các quy định, quy chế về học chế tín chỉ, các quy định của Nhà trường liên quan đến quyền và nghĩa vụ của sinh viên trong học tập [1].
+
+* **Trong các buổi họp lớp sinh viên (ít nhất 01 lần/học kỳ):**
+  * Thông báo về các hoạt động của Trường về vấn đề học tập liên quan đến sinh viên [2].
+  * Tư vấn kết quả học tập trong học kỳ [2].",10,True,"[1, 2]",[],[],True,2,0,,,,,
+S04,synthesis,Hãy phân biệt nhiệm vụ và quyền hạn của cố vấn học tập theo các tài liệu OU hiện có.,Phân biệt rõ hai nhóm nội dung dựa trên đúng các phần tài liệu; không đánh đồng nhiệm vụ và quyền hạn.,Nhiệm vụ của CVHT; Quyền hạn của CVHT,200,14.85,"Dựa trên các tài liệu của Trường Đại học Mở TP.HCM (OU), nhiệm vụ và quyền hạn của Cố vấn học tập (CVHT) được quy định cụ thể như sau:
+
+**1. Quyền hạn của Cố vấn học tập:**
+* Được cung cấp tài khoản truy cập vào hệ thống cổng thông tin Cố vấn học tập – Chủ nhiệm lớp để tham khảo và tư vấn cho sinh viên [1].
+* Được đề nghị các đơn vị liên quan cung cấp tài liệu, phòng học, thông tin và cơ sở vật chất cần thiết để thực hiện nhiệm vụ [1].
+* Được yêu cầu Ban cán sự lớp báo cáo tình hình học tập (định kỳ hoặc đột xuất) nhằm đưa ra biện pháp hỗ trợ kịp thời [1].
+* Chủ động trong công tác quản lý, tư vấn, hướng dẫn để giúp sinh viên hoàn thành tốt nhiệm vụ học tập [1].
+
+**2. Nhiệm vụ của Cố vấn học tập:**
+* Tổ chức họp lớp vào đầu mỗi học kỳ; triển khai quy chế, quy định về học chế tín chỉ và quyền, nghĩa vụ của sinh viên [2].
+* Tư vấn phương pháp học đại học, tự học, kỹ năng nghiên cứu khoa học, thu thập và xử lý thông tin, tài liệu [2].
+* Hướng dẫn sinh viên thực hiện chương trình đào tạo toàn khóa, cách chọn học phần và tuân thủ điều kiện tiên quyết [2].
+* Hướng dẫn quy trình, thủ tục đăng ký/hủy đăng ký môn học và xây dựng kế hoạch học tập cá nhân từng học kỳ [2].
+* Hỗ trợ sinh viên lựa chọn nơi thực tập, đề tài khóa luận, tiểu luận hoặc nghiên cứu khoa học phù hợp [2].
+* Nhắc nhở sinh viên khi kết quả học tập có dấu hiệu giảm sút [2].
+* Thực hiện chế độ báo cáo theo yêu cầu của Trường và lãnh đạo khoa [2].
+* Sử dụng hiệu quả cổng thông tin Cố vấn học tập – Chủ nhiệm lớp cho các lớp được phân công phụ trách [2].",10,True,"[1, 2]",[],[],True,2,0,,,,,
+S05,synthesis,"Theo tài liệu học bổng Vượt khó, hãy tổng hợp đối tượng áp dụng và các điều kiện cần đáp ứng.",Tổng hợp có điều kiện và giới hạn đối tượng; tránh suy diễn rằng mọi học bổng OU đều theo cùng quy định.,Quy định học bổng Vượt khó học tập đại học chính quy,200,17.9,"Dựa trên tài liệu cung cấp, đối tượng áp dụng và các điều kiện cần đáp ứng của học bổng Vượt khó học tập đại học chính quy bao gồm:
+
+**1. Đối tượng áp dụng:**
+* Sinh viên đang theo học hệ chính quy bậc đại học trong thời gian đào tạo chính khóa 4 năm tại Trường Đại học Mở Thành phố Hồ Chí Minh [2].
+* Sinh viên có hoàn cảnh gia đình khó khăn về kinh tế, có ý chí vươn lên và tinh thần cầu tiến trong học tập, rèn luyện [2].
+
+**2. Các điều kiện cần đáp ứng và trường hợp không áp dụng:**
+* **Ưu tiên xét đối với sinh viên:** Không được miễn giảm học phí, không thuộc diện hưởng học bổng chính sách hoặc trợ cấp xã hội, chính sách ưu đãi và không được xét học bổng Khuyến khích học tập trong cùng học kỳ [2].
+* **Không áp dụng đối với:**
+  * Sinh viên học liên thông từ cao đẳng lên đại học, bằng đại học thứ hai, đào tạo từ xa hoặc vừa làm vừa học [2].
+  * Sinh viên đã nhận học bổng Tiếp sức đến trường hoặc học bổng hỗ trợ khó khăn đột xuất khác trong cùng học kỳ được xét [2].",10,True,[2],[],[],True,1,0,,,,,
+C01,cross_topic,Quyền hạn của cố vấn học tập trong việc yêu cầu thông tin từ các đơn vị liên quan là gì?,Tìm đúng phần quyền hạn thay vì nhiệm vụ và trích dẫn nguồn.,Quyền hạn của Cố vấn học tập,200,13.323,"Quyền hạn của cố vấn học tập trong việc yêu cầu thông tin từ các đơn vị liên quan là: được đề nghị các đơn vị có liên quan cung cấp các tài liệu, phòng học, thông tin và cơ sở vật chất cần thiết để thực hiện nhiệm vụ [1].",10,True,[1],[],[],True,1,0,,,,,
+C02,cross_topic,"Theo tài liệu hiện có, cố vấn học tập phải thực hiện những loại báo cáo nào vào cuối học kỳ hoặc cuối năm học?","Nêu các báo cáo theo mốc thời gian có trong tài liệu, có citation.",Chế độ báo cáo,200,14.202,"Theo tài liệu hiện có, các loại báo cáo của Cố vấn học tập (CVHT) bao gồm:
+
+* **Cuối mỗi học kỳ:** CVHT lập báo cáo về công tác Cố vấn học tập các lớp sinh viên phụ trách [1].
+* **Cuối mỗi năm học:** CVHT lập báo cáo tình hình học tập của lớp sinh viên, những thắc mắc và kiến nghị của sinh viên (nếu có) và các vấn đề khác có liên quan đến quá trình học tập [1]. Ngoài ra, báo cáo thực hiện nhiệm vụ của từng CVHT còn được dùng để làm hồ sơ thanh toán phụ cấp sau khi kết thúc năm học [3].",10,True,"[1, 3]",[],[],True,2,0,,,,,
+C03,cross_topic,Tài liệu OU đề cập trách nhiệm phổ biến quy định về sinh viên ngoại trú và hướng dẫn đăng ký tạm trú như thế nào?,Truy xuất đúng quy chế ngoại trú; không tự bịa thủ tục hành chính cụ thể.,Công tác quản lý sinh viên ngoại trú,200,14.491,"Theo tài liệu, công tác quản lý sinh viên ngoại trú bao gồm các nội dung sau:
+- Phổ biến các quy định của Bộ Giáo dục và Đào tạo, nhà trường về công tác ngoại trú của học sinh, sinh viên; hướng dẫn và tư vấn thủ tục đăng ký tạm trú ngay từ khi nhập học [2].
+- Lập kế hoạch hàng năm để thực hiện công tác quản lý học sinh, sinh viên ngoại trú [2].
+- Lập sổ học sinh, sinh viên ngoại trú, cập nhật đầy đủ, kịp thời việc thay đổi nơi cư trú của học sinh, sinh viên ngoại trú [2].",10,True,[2],[],[],True,1,0,,,,,
+C04,cross_topic,"Theo quy định học bổng Vượt khó, những hình thức đào tạo nào không thuộc đối tượng áp dụng?",Liệt kê loại hình đào tạo chỉ khi đoạn nguồn hỗ trợ; giữ phạm vi riêng của học bổng Vượt khó.,Quy định học bổng Vượt khó học tập đại học chính quy,200,11.925,"Theo quy định học bổng Vượt khó, những hình thức đào tạo không thuộc đối tượng áp dụng bao gồm:
+- Sinh viên học liên thông từ cao đẳng lên đại học [1].
+- Bằng đại học thứ hai [1].
+- Đào tạo từ xa [1].
+- Vừa làm vừa học [1].",10,True,[1],[],[],True,1,0,,,,,
+C05,cross_topic,Cố vấn học tập có thể sử dụng cổng thông tin CVHT – Chủ nhiệm lớp để hỗ trợ sinh viên ra sao?,"Lấy đúng đoạn về sử dụng cổng thông tin, tư vấn/trao đổi với sinh viên; trích dẫn.",Sử dụng cổng thông tin Cố vấn học tập,200,13.023,"Dựa trên tài liệu, Cố vấn học tập có thể sử dụng cổng thông tin Cố vấn học tập – Chủ nhiệm lớp để hỗ trợ sinh viên thông qua các hoạt động sau:
+
+* Được cung cấp tài khoản truy cập để tham khảo và tư vấn cho sinh viên trong quá trình học tập tại Trường [1].
+* Có lịch tư vấn trực tuyến với sinh viên, đồng thời kịp thời phản ánh các vấn đề của sinh viên về Trường qua cổng thông tin này [2].
+* Thường xuyên đăng tải các thông báo, quy định, quy chế mới để thông tin cho sinh viên trong mỗi học kỳ [3].
+* Theo dõi, trả lời các thắc mắc và tư vấn cho sinh viên liên quan đến việc học tập thông qua diễn đàn thảo luận hoặc phần tin nhắn nội bộ trong vòng 48 giờ kể từ khi sinh viên gửi thắc mắc (trừ cuối tuần và ngày nghỉ lễ) [3].",10,True,"[1, 2, 3]",[],[],True,3,0,,,,,
+U01,unsupported,"Theo quy định của OU, mọi sinh viên đều được nhận học bổng 100 triệu đồng mỗi học kỳ mà không cần điều kiện đúng không?",Không xác nhận khẳng định thiếu bằng chứng; nếu nêu điều kiện của học bổng Vượt khó phải giới hạn đúng phạm vi tài liệu.,Không có nguồn xác nhận mức 100 triệu trong dữ liệu đã kiểm thử,200,13.421,"Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này (cụ thể là về mức học bổng 100 triệu đồng). 
+
+Tuy nhiên, theo quy định về học bổng Vượt khó học tập đại học chính quy, sinh viên muốn được xét cấp học bổng phải đáp ứng các điều kiện:
+- Hoàn tất nghĩa vụ học phí các học kỳ trước và học kỳ được xét cấp học bổng theo quy định của Phòng Quản lý đào tạo và Nhà trường [1].
+- Đăng ký môn học trong học kỳ liền kề tiếp theo [1].",10,True,[1],[],[],True,1,0,,,,,
+U02,unsupported,"Theo quy định OU, sinh viên có thể bỏ qua toàn bộ môn tiên quyết mà không cần xin phép phải không?",Không xác nhận quyền bỏ qua nếu không có quy định hỗ trợ; có thể nêu yêu cầu tuân thủ điều kiện tiên quyết nếu có nguồn.,Nhiệm vụ CVHT; điều kiện tiên quyết,200,12.288,Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.,10,True,[],[],[],True,0,0,,,,,
+U03,unsupported,OU có bảo đảm mỗi sinh viên chắc chắn tốt nghiệp trong đúng 2 năm không?,Không khẳng định bảo đảm nếu thiếu chứng cứ; nêu không đủ thông tin và không bịa thời hạn.,Kiểm tra khả năng từ chối khi thiếu bằng chứng,200,29.943,Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.,10,True,[],[],[],True,0,0,,,,,
+U04,unsupported,"Theo tài liệu hiện có, học bổng Vượt khó được tự động chuyển vào tài khoản ngân hàng của tất cả sinh viên vào ngày 1 mỗi tháng đúng không?","Không chấp nhận tiền đề thiếu chứng cứ về tự động cấp, đối tượng và ngày chuyển khoản.",Quy định học bổng Vượt khó,200,13.223,Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này.,10,True,[],[],[],True,0,0,,,,,
+U05,unsupported,"Nếu sinh viên quên đăng ký môn học, OU có tự động đăng ký toàn bộ môn học và miễn tất cả học phí không?",Không tự bịa cơ chế đăng ký tự động hoặc miễn học phí; nói rõ phần không có bằng chứng.,Kiểm tra khả năng từ chối khi thiếu bằng chứng,200,12.01,Tôi chưa tìm thấy đủ thông tin trong tài liệu hiện có để trả lời chính xác câu hỏi này (liên quan đến việc nhà trường tự động đăng ký môn học và miễn tất cả học phí khi sinh viên quên đăng ký).,10,True,[],[],[],True,0,0,,,,,

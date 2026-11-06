@@ -67,6 +67,8 @@ def get_text(chunk):
     return ""
 
 
+
+
 def get_metadata(chunk, index):
     metadata = {}
 
@@ -77,14 +79,17 @@ def get_metadata(chunk, index):
     for key in (
         "source",
         "url",
+        "source_url",
         "title",
         "source_file",
         "heading",
+        "category",
         "chunk_index",
     ):
         if key in chunk and key not in metadata:
             metadata[key] = chunk[key]
 
+    # Chroma chỉ chấp nhận metadata dạng primitive.
     clean = {}
 
     for key, value in metadata.items():
@@ -92,11 +97,15 @@ def get_metadata(chunk, index):
             clean[str(key)] = value
         elif value is not None:
             clean[str(key)] = json.dumps(
-                value, ensure_ascii=False
+                value,
+                ensure_ascii=False,
             )
 
     clean["chunk_index_fallback"] = index
+
     return clean
+
+
 
 
 def get_chunk_id(chunk, index):
@@ -159,6 +168,7 @@ def embed_batch(client, texts):
 # 4. CHẠY EMBEDDING
 # =========================
 
+
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
 
@@ -171,6 +181,10 @@ def main():
 
     records = []
     seen_ids = set()
+
+    # =========================
+    # 1. CHUẨN BỊ CHUNKS
+    # =========================
 
     for index, chunk in enumerate(chunks):
         if not isinstance(chunk, dict):
@@ -203,9 +217,16 @@ def main():
 
     print(f"Tổng chunks hợp lệ: {len(records)}")
 
+    # =========================
+    # 2. KẾT NỐI GEMINI + CHROMA
+    # =========================
+
     client = genai.Client(api_key=api_key)
 
-    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+    CHROMA_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     chroma_client = chromadb.PersistentClient(
         path=str(CHROMA_DIR)
@@ -216,54 +237,156 @@ def main():
         metadata={"hnsw:space": "cosine"},
     )
 
-    # Bỏ qua những ID đã lưu thành công.
-    existing_ids = set(collection.get()["ids"])
+    # =========================
+    # 3. SO SÁNH CHUNKS
+    # =========================
+
+    existing_ids = set(
+        collection.get(include=[])["ids"]
+    )
+
+    new_ids = {
+        record["id"]
+        for record in records
+    }
 
     pending = [
         record for record in records
         if record["id"] not in existing_ids
     ]
 
-    print(f"Đã có trong Chroma: {len(existing_ids)}")
-    print(f"Còn cần embedding: {len(pending)}")
+    existing_records = [
+        record for record in records
+        if record["id"] in existing_ids
+    ]
 
-    if not pending:
-        print("Tất cả chunks đã có trong Chroma.")
-        return
+    stale_ids = sorted(
+        existing_ids - new_ids
+    )
+
+    print("\n=== CHROMA SYNC ===")
+    print(f"Chunks trong JSON: {len(records)}")
+    print(f"Chunks trong Chroma: {len(existing_ids)}")
+    print(f"Cần embedding: {len(pending)}")
+    print(f"Cần cập nhật metadata: {len(existing_records)}")
+    print(f"Chunks cũ cần xóa: {len(stale_ids)}")
+
+    # =========================
+    # 4. EMBEDDING CHUNKS MỚI
+    # =========================
 
     for start in range(0, len(pending), BATCH_SIZE):
         batch = pending[start:start + BATCH_SIZE]
-        texts = [item["text"] for item in batch]
 
-        # Tạo vectors bằng Gemini.
+        texts = [
+            item["text"]
+            for item in batch
+        ]
+
         vectors = embed_batch(client, texts)
 
-        # Lưu ngay sau mỗi batch thành công.
+        # Kiểm tra dimension.
+        if any(len(v) != 768 for v in vectors):
+            raise ValueError(
+                "Embedding dimension phải là 768."
+            )
+
+        # Lưu batch thành công.
         collection.upsert(
-            ids=[item["id"] for item in batch],
+            ids=[
+                item["id"]
+                for item in batch
+            ],
             documents=texts,
             embeddings=vectors,
             metadatas=[
-                item["metadata"] for item in batch
+                item["metadata"]
+                for item in batch
             ],
         )
 
         completed = min(
-            start + len(batch), len(pending)
+            start + len(batch),
+            len(pending),
         )
 
         print(
-            f"Đã xử lý {completed}/{len(pending)} "
-            f"chunks còn lại"
+            f"Đã embedding {completed}/{len(pending)}"
         )
 
-        # Giảm nguy cơ vượt giới hạn request/phút.
         if completed < len(pending):
             time.sleep(45)
 
-    print("\nEmbedding Gemini hoàn tất!")
-    print(f"Tổng chunks hợp lệ: {len(records)}")
-    print(f"Số bản ghi trong collection: {collection.count()}")
+    # =========================
+    # 5. ĐỒNG BỘ METADATA
+    # =========================
+
+    print("\nĐang cập nhật metadata...")
+
+    for start in range(
+        0,
+        len(existing_records),
+        BATCH_SIZE,
+    ):
+        batch = existing_records[
+            start:start + BATCH_SIZE
+        ]
+
+        collection.update(
+            ids=[
+                item["id"]
+                for item in batch
+            ],
+            metadatas=[
+                item["metadata"]
+                for item in batch
+            ],
+        )
+
+    # =========================
+    # 6. XÓA CHUNKS CŨ
+    # =========================
+
+    if stale_ids:
+        print(
+            f"Đang xóa {len(stale_ids)} chunks cũ..."
+        )
+
+        for start in range(
+            0,
+            len(stale_ids),
+            BATCH_SIZE,
+        ):
+            batch_ids = stale_ids[
+                start:start + BATCH_SIZE
+            ]
+
+            collection.delete(ids=batch_ids)
+
+    # =========================
+    # 7. VALIDATION
+    # =========================
+
+    final_ids = set(
+        collection.get(include=[])["ids"]
+    )
+
+    missing_ids = new_ids - final_ids
+    remaining_stale_ids = final_ids - new_ids
+
+    print("\n=== VALIDATION ===")
+    print(f"Expected chunks: {len(new_ids)}")
+    print(f"Actual chunks: {len(final_ids)}")
+    print(f"Missing IDs: {len(missing_ids)}")
+    print(f"Stale IDs: {len(remaining_stale_ids)}")
+
+    if final_ids != new_ids:
+        raise RuntimeError(
+            "FAIL: Chroma chưa đồng bộ với chunks.json"
+        )
+
+    print("\nPASS: Chroma synchronized!")
+    print("Embedding Gemini hoàn tất!")
     print(f"Collection: {COLLECTION_NAME}")
     print(f"Chroma lưu tại: {CHROMA_DIR}")
 

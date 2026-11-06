@@ -10,7 +10,6 @@ OUTPUT_DIR = ROOT_DIR / "data" / "processed"
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Nhận diện một số trang báo lỗi phổ biến
 ERROR_PATTERNS = [
     r"502 Bad Gateway",
     r"502 Server Error",
@@ -33,13 +32,9 @@ def is_error_page(text: str) -> bool:
 
 def clean_markdown(text: str) -> str:
     """Chuẩn hóa khoảng trắng, giữ nguyên nội dung chính."""
-    # Chuẩn hóa kiểu xuống dòng
     text = text.replace("\r\n", "\n").replace("\r", "\n")
-
-    # Xóa khoảng trắng thừa ở đầu và cuối mỗi dòng
     lines = [line.strip() for line in text.split("\n")]
 
-    # Xóa các dòng trống liên tiếp, không xóa nội dung
     cleaned_lines = []
     previous_blank = False
 
@@ -57,56 +52,69 @@ def clean_markdown(text: str) -> str:
 
 def main():
     if not INPUT_DIR.exists():
-        print(f"Khong tim thay thu muc: {INPUT_DIR}")
+        print(f"Không tìm thấy thư mục: {INPUT_DIR}")
         return
 
+    # Lấy Markdown ở thư mục gốc và thư mục crawled.
     files = list(INPUT_DIR.glob("*.md"))
 
+    crawled_dir = INPUT_DIR / "crawled"
+    if crawled_dir.exists():
+        files.extend(crawled_dir.glob("*.md"))
+
+    files = sorted(set(files))
+
     if not files:
-        print(f"Khong tim thay file Markdown trong: {INPUT_DIR}")
+        print(f"Không tìm thấy file Markdown trong: {INPUT_DIR}")
         return
 
     cleaned_count = 0
     skipped_count = 0
 
     for input_file in files:
-        print(f"\nDang xu ly: {input_file.name}")
+        print(f"\nĐang xử lý: {input_file.name}")
 
         try:
             text = input_file.read_text(encoding="utf-8")
 
             if not text.strip():
-                print("Bo qua: file rong.")
+                print("Bỏ qua: file rỗng.")
                 skipped_count += 1
                 continue
 
             if is_error_page(text):
-                print("Bo qua: co dau hieu la trang bao loi.")
+                print("Bỏ qua: có dấu hiệu là trang báo lỗi.")
                 skipped_count += 1
                 continue
 
             cleaned_text = clean_markdown(text)
 
             if not cleaned_text.strip():
-                print("Bo qua: khong con noi dung.")
+                print("Bỏ qua: không còn nội dung.")
                 skipped_count += 1
                 continue
 
-            output_file = OUTPUT_DIR / input_file.name
+            # Giữ riêng tên file để tránh ghi đè giữa các nguồn.
+            if input_file.parent == crawled_dir:
+                output_file = OUTPUT_DIR / "crawled" / input_file.name
+            else:
+                output_file = OUTPUT_DIR / input_file.name
+
+            output_file.parent.mkdir(parents=True, exist_ok=True)
             output_file.write_text(cleaned_text, encoding="utf-8")
 
-            print(f"Da luu: {output_file}")
-            print(f"So ky tu: {len(cleaned_text)}")
+            print(f"Đã lưu: {output_file}")
+            print(f"Số ký tự: {len(cleaned_text)}")
             cleaned_count += 1
 
         except (OSError, UnicodeError) as error:
-            print(f"Loi doc/ghi file: {error}")
+            print(f"Lỗi đọc/ghi file: {error}")
             skipped_count += 1
 
-    print("\n===== TONG KET =====")
-    print(f"So file da lam sach: {cleaned_count}")
-    print(f"So file bi bo qua: {skipped_count}")
-    print(f"Thu muc ket qua: {OUTPUT_DIR}")
+    print("\n===== TỔNG KẾT =====")
+    print(f"Số file đã làm sạch: {cleaned_count}")
+    print(f"Số file bị bỏ qua: {skipped_count}")
+    print(f"Thư mục kết quả: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":
